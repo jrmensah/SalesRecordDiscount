@@ -11,7 +11,7 @@ public class SalesRecordDiscount {
     public static void main (String[]args){
         int customerNum;
         double salesAmt, tax=0.00, total, subtotal;
-        double discountAmt = 0;
+        double discountAmt=0.00;
         String name, taxCode;
         String displayDetails;
         String answer = null;
@@ -87,19 +87,20 @@ public class SalesRecordDiscount {
     }
 
         //Apply discount as needed, over 5000 = 3%, over 10000 = 2%, over 15000 = 1%
+    
     public static double applyDiscount(double salesAmt) {
         if (salesAmt <= 5000) {
             System.out.println("No discount");
             return salesAmt;
         } else if ((salesAmt > 5000) && (salesAmt <= 10000)) {
             System.out.println("1% Discount");
-            return salesAmt * (0.97);
+            return salesAmt * (0.99);
         } else if ((salesAmt > 10000) && (salesAmt <= 15000)) {
-            System.out.println(" 2% Discount");
+            System.out.println("2% Discount");
             return salesAmt * (0.98);
         } else {
-            System.out.println(" 3% Discount");
-            return salesAmt * (0.99);
+            System.out.println("3% Discount");
+            return salesAmt * (0.97);
         }
 
         // Display details of sales record
