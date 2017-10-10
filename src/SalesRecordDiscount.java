@@ -47,7 +47,7 @@ public class SalesRecordDiscount {
                 System.out.println("Invalid Entry. Please choose 'NRM', 'NPF' or 'BIZ'");
                 taxCode = scan.next();
             }
-            scan.nextLine();
+            System.out.println("");
 
             // Find the Subtotal and Total Amount Due
 
@@ -73,21 +73,19 @@ public class SalesRecordDiscount {
 
             System.out.println("Do you want to enter another record?(Y/N)");
             answer=scan.nextLine();
-            if(!answer.equalsIgnoreCase("y") && !answer.equalsIgnoreCase("n")){
+            if(!answer.equalsIgnoreCase("y") && !answer.equalsIgnoreCase("n")) {
                 System.out.println("Invalid Entry. Please choose Y or N.");
-                answer=scan.nextLine();
+                answer = scan.nextLine();
             }
             if(answer.equalsIgnoreCase("n")){
                 System.out.println("Thank you!");
             }
-
-            scan.nextLine();
             System.out.println("");
         }while(!answer.equalsIgnoreCase("n"));
     }
 
         //Apply discount as needed, over 5000 = 3%, over 10000 = 2%, over 15000 = 1%
-    
+
     public static double applyDiscount(double salesAmt) {
         if (salesAmt <= 5000) {
             System.out.println("No discount");
